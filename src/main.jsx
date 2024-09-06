@@ -3,7 +3,6 @@ import { configureStore } from '@reduxjs/toolkit'
 import { filterChange } from './reducers/filterReducers'
 import { createNote } from './reducers/noteReducer'
 import { Provider } from 'react-redux'
-
 import App from './App'
 import noteReducer from './reducers/noteReducer'
 import filterReducer from './reducers/filterReducers'
@@ -13,6 +12,8 @@ const store = configureStore({
   filter: filterReducer
  }
 })
+
+
 console.log(store.getState())
 store.subscribe(() => console.log(store.getState()))
 store.dispatch(filterChange('IMPORTANT'))
